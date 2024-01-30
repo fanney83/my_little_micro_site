@@ -7,8 +7,6 @@ export default async function Home() {
   const data = await getData()
 
   return (
-    <div className="flex bg-orange-300  min-h-full px-16 ">
-      Home page, þetta er home page sem á localhost:3000/
-    </div>
+    <div className="flex bg-orange-300  min-h-full px-16 ">Hæ og velkomin!</div>
   )
 }

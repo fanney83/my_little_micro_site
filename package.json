@@ -10,6 +10,7 @@
     "build-dev": "next build && next dev"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.0.15",
     "classnames": "^2.3.2",
     "next": "14.0.2",
     "react": "^18",

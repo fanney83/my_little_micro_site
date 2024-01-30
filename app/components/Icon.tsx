@@ -1,0 +1,24 @@
+'use client'
+import type { IconProps as PhosphorProps } from '@phosphor-icons/react'
+import { InstagramLogo, LinkedinLogo } from '@phosphor-icons/react'
+
+const iconMapper = {
+  InstagramLogo,
+  LinkedinLogo,
+}
+
+export type IconName = keyof typeof iconMapper
+interface IconProps extends PhosphorProps {
+  icon: IconName
+  props?: IconProps
+}
+
+export default function Icon({ icon, ...props }: IconProps) {
+  if (!iconMapper[icon]) {
+    return null
+  }
+
+  const IconCmp = iconMapper[icon]
+
+  return <IconCmp {...props} />
+}
