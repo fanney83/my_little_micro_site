@@ -8,9 +8,11 @@ type ButtonProps = {
 export const Button = ({
   label = 'This is a button',
   onClick = () => console.log('Function missing'),
+  ...props
 }: ButtonProps) => {
   return (
     <button
+      {...props}
       onClick={onClick}
       className="p-4 rounded-xl border-3 border-purple-400 bg-slate-200 "
     >

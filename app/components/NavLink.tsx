@@ -15,12 +15,13 @@ export default function NavLink({ href, name }: NavProps) {
   const path = usePathname()
 
   const navLinkClass = cn(
+    'text-white',
     path === href ? 'underline underline-offset-4' : '',
-    'text-white'
+    'hover:underline hover:text-[#00B2FF] underline-offset-4 transition-all ease-in-out'
   )
 
   return (
-    <Link href={href} className={navLinkClass}>
+    <Link href={href} className={cn(navLinkClass)}>
       {name}
     </Link>
   )
