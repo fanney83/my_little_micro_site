@@ -1,17 +1,15 @@
 'use client'
 
-import { completeTodo } from '@/utils/actions'
 import { useTransition } from 'react'
 
-const Todo = ({ todo }) => {
-  const [isPending, startTransition] = useTransition()
+const Todo = ({ todo = { completed: true, content: 'hæ' } }) => {
   return (
     <div className="flex">
       <button
         className={`borde border-black ${
           todo.completed ? 'text-green-500' : 'text-red-600'
         } `}
-        onClick={() => startTransition(() => completeTodo(todo.id))}
+        onClick={() => console.log('hæ')}
       >
         {todo.completed ? 'done' : 'complete todo'}
       </button>

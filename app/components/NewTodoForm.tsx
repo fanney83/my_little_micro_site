@@ -1,4 +1,3 @@
-import { newTodo } from '@/utils/actions'
 import { Button } from './Button'
 
 const NewTodoForms = () => {
@@ -8,7 +7,7 @@ const NewTodoForms = () => {
       <div className="flex px-16 gap-4 flex-col ">
         <p>Er líka með svona fínt input. Jájá</p>
 
-        <form action={newTodo}>
+        <form>
           <input
             placeholder="Add todo"
             name="content"
