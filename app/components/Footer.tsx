@@ -14,7 +14,7 @@ export default function Footer() {
         </Link>
       </ul>
       <div className="flex gap-4 w-100 justify-end">
-        <Link href="https://www.linkedin.com/in/fanney-vilhj%C3%A1lmsd%C3%B3ttir">
+        <Link href="https://www.linkedin.com/in/fanney-%C3%BE%C3%B3ra-vilhj%C3%A1lmsd%C3%B3ttir-she-her-b03609a/">
           <Icon
             size={45}
             className="hover:fill-[#F85874] hover:-translate-y-1 transition-all ease-in-out "

@@ -37,7 +37,7 @@ export default function RootLayout({
         )}
       >
         <NavBar navLinks={navLinks} />
-        <main className="min-h-full">{children}</main>
+        <main className="min-h-full flex-1">{children}</main>
         <Footer />
       </body>
     </html>
