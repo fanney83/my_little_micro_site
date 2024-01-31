@@ -1,7 +1,7 @@
 'use client'
 import { useForm } from 'react-hook-form'
 
-const NewEntryForms = () => {
+const NewEntryForms = ({ setList, list }) => {
   const {
     register,
     handleSubmit,
