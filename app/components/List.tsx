@@ -16,7 +16,7 @@ type ActionsTypes = 'add-item' | 'find-item'
 
 export default function List() {
   const [list, setList] = useState<IList>([])
-  const [optionsVisible, setOptionsVisible] = useState(false)
+  const [optionsVisible, setOptionsVisible] = useState({})
   const [action, setAction] = useState({ state: 'add-item' })
 
   const removeItem = (item: ListProps) => {
@@ -103,12 +103,12 @@ export default function List() {
               return (
                 <>
                   <ListItem
-                    onClick={() => setOptionsVisible(!optionsVisible)}
+                    onClick={() => setOptionsVisible(item)}
                     key={key}
                     title={item.title}
                     subtitle={item.subtitle}
                   />
-                  {optionsVisible && (
+                  {optionsVisible === item && (
                     <div className="border-2 border-pink-500 h-44 bg-pink-100 rounded-lg flex flex-col md:flex-row items-center justify-evenly">
                       <div className="flex gap-4 w-100">
                         <span className="text-lg bg-[#F5FF78] px-2 rounded-md uppercase flex items-center">
