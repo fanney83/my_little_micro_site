@@ -1,11 +1,17 @@
 'use client'
 import type { IconProps as PhosphorProps } from '@phosphor-icons/react'
-import { InstagramLogo, LinkedinLogo, SpinnerGap } from '@phosphor-icons/react'
+import {
+  Trash,
+  InstagramLogo,
+  LinkedinLogo,
+  SpinnerGap,
+} from '@phosphor-icons/react'
 
 const iconMapper = {
   InstagramLogo,
   LinkedinLogo,
   SpinnerGap,
+  Trash,
 }
 
 export type IconName = keyof typeof iconMapper
