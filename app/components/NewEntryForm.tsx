@@ -1,23 +1,51 @@
-import { newEntry } from '@/utils/actions'
+'use client'
+import { useForm } from 'react-hook-form'
 
 const NewEntryForms = () => {
-  return (
-    <div className="p-4 border-2 border-black-200">
-      <h1>New entry from. Það formar ný entryyyyy.</h1>
-      <div className="flex px-16 gap-4 flex-col ">
-        <p>Er líka með svona fínt input. Jájá</p>
+  const {
+    register,
+    handleSubmit,
+    reset,
+    setFocus,
+    formState: { errors },
+  } = useForm()
 
-        <form action={newEntry}>
-          <input
-            placeholder="Add entry"
-            name="content"
-            className="border-2 text-black bold mr-4 p-2 rounded-xl "
-            type="text"
-          />
-          <button type="submit">Add entry</button>
-        </form>
-      </div>
-    </div>
+  return (
+    <form
+      className="flex flex-col lg:flex-row items-start h-100 pb-5"
+      onSubmit={handleSubmit((data) => {
+        setList([...list, { title: data.title, subtitle: data.subtitle }]),
+          setFocus('title')
+        reset()
+      })}
+    >
+      <label className="min-h-24 flex flex-col">
+        Titill
+        <input
+          className="border-2 text-black bold mr-4 p-2 rounded-xl "
+          {...register('title', { required: true })}
+        />
+        {errors.title?.type === 'required' && (
+          <p className="text-red-400" role="alert">
+            Obb hér þarf titil
+          </p>
+        )}
+      </label>
+
+      <label className="min-h-24 flex flex-col">
+        Texti
+        <input
+          className="border-2 text-black bold mr-4 p-2 rounded-xl "
+          {...register('subtitle', { required: true })}
+        />
+        {errors.subtitle?.type === 'required' && (
+          <p className="text-red-400" role="alert">
+            Obb hér þarf texta
+          </p>
+        )}
+      </label>
+      <button className="w-100 text-sm " type="submit"></button>
+    </form>
   )
 }
 

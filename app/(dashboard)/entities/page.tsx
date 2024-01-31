@@ -1,7 +1,7 @@
-import List from '@/app/components/List'
+import NewEntryForms from '@/app/components/NewEntryForm'
 
 const Entities = async () => {
-  return <List />
+  return <NewEntryForms />
 }
 
 export default Entities
