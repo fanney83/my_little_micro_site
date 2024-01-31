@@ -16,11 +16,11 @@ export const metadata: Metadata = {
 const navLinks: NavProps[] = [
   {
     href: '/',
-    name: 'Home',
+    name: 'Heim',
   },
   {
     href: '/entities',
-    name: 'Entities',
+    name: 'Listagleði',
   },
 ]
 export default function RootLayout({
