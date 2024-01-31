@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Icon from './Icon'
+import { Button } from './Button'
 
 export type ListProps = {
   title: string
@@ -35,7 +36,7 @@ export default function List() {
   } = useForm()
 
   return (
-    <div className="w-100 px-8 md:px-11 grid grid-cols-12 grid-flow-row lg:grid-flow-col gap-6">
+    <div className="w-100 px-4 md:px-11 grid grid-cols-12 grid-flow-row lg:grid-flow-col gap-6">
       {action.state === 'find-item' && (
         <div className="col-start-6 col-end-10">
           <input
@@ -49,7 +50,7 @@ export default function List() {
         </div>
       )}
       {action.state === 'add-item' && (
-        <div className="col-start-2 col-end-5">
+        <div className="col-start-1  md:col-start-2 col-end-12 md:col-end-5">
           <form
             className="flex flex-col md:flex-row items-start h-100 pb-5"
             onSubmit={handleSubmit((data) => {
@@ -86,11 +87,13 @@ export default function List() {
                 </p>
               )}
             </label>
-            <button className="w-100 text-sm " type="submit"></button>
+            <Button className="w-100 text-sm" type="submit">
+              Bæta við
+            </Button>
           </form>
         </div>
       )}
-      <div className="flex flex-col gap-4 col-start-2 xl:col-start-7 col-end-12">
+      <div className="flex flex-col gap-4 col-start-1 md:col-start-2 xl:col-start-7 col-end-12">
         {list.length > 0 ? (
           list
             .sort((a, b) => {
@@ -106,16 +109,23 @@ export default function List() {
                     subtitle={item.subtitle}
                   />
                   {optionsVisible && (
-                    <div className="border-2 border-pink-500 h-44 bg-pink-100 rounded-lg">
-                      <p>{item.title}</p>
-                      <p>{item.subtitle}</p>
-                      <button
-                        className="flex items-center"
+                    <div className="border-2 border-pink-500 h-44 bg-pink-100 rounded-lg flex items-center justify-evenly">
+                      <div className="flex gap-4 w-100">
+                        <span className="text-lg bg-[#F5FF78] px-2 rounded-md uppercase flex items-center">
+                          {item.title[0]}
+                        </span>
+                        <div className="flex-5">
+                          <p>Titill: {item.title}</p>
+                          <p>Texti: {item.subtitle}</p>
+                        </div>
+                      </div>
+                      <Button
                         onClick={() => removeItem(item)}
+                        className="border border-pink-500 flex items-center"
                       >
                         Eyða úr lista
                         <Icon icon="Trash" />
-                      </button>
+                      </Button>
                     </div>
                   )}
                 </>
