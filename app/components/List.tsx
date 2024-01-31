@@ -109,7 +109,7 @@ export default function List() {
                     subtitle={item.subtitle}
                   />
                   {optionsVisible && (
-                    <div className="border-2 border-pink-500 h-44 bg-pink-100 rounded-lg flex items-center justify-evenly">
+                    <div className="border-2 border-pink-500 h-44 bg-pink-100 rounded-lg flex flex-col md:flex-row items-center justify-evenly">
                       <div className="flex gap-4 w-100">
                         <span className="text-lg bg-[#F5FF78] px-2 rounded-md uppercase flex items-center">
                           {item.title[0]}
